@@ -1,7 +1,7 @@
-import getHolidaysByYear from './getHolidaysByYear'
+import getHolidays from './getHolidays'
 
 const noliday = {
-	getHolidaysByYear
+	getHolidays
 }
 
 export default noliday

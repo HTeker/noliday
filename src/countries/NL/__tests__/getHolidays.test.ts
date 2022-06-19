@@ -1,8 +1,8 @@
 import noliday, { Country, Holiday } from '../../../index'
 
-describe('NL - getHolidaysByYear()', () => {
+describe('NL - getHolidays()', () => {
 	it('should return correct holidays for a given year', () => {
-		const result = noliday.getHolidaysByYear(2022, { country: Country.Netherlands })
+		const result = noliday.getHolidays({ year: 2022, country: Country.Netherlands })
 		const expected = {
 			[Holiday.AscensionDay]: new Date('05-26-2022'),
 			[Holiday.BoxingDay]: new Date('12-26-2022'),

@@ -23,7 +23,7 @@ const intermediateDates: {[key: number]: string} = {
 	[19]: '03-27',
 }
 
-const calculateEasterSundayByYear = (year: number): Date => {
+const getEasterSunday = (year: number): Date => {
 	const index = (year - Math.floor(year / 19) * 19) + 1
 	const date = intermediateDates[index]
 	const intermediateDate = moment(`${date}-${year}`, 'MM-DD-YYYY')
@@ -36,4 +36,4 @@ const calculateEasterSundayByYear = (year: number): Date => {
 	return intermediateDate.toDate()
 }
 
-export default calculateEasterSundayByYear
+export default getEasterSunday

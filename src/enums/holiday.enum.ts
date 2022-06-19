@@ -7,7 +7,7 @@ enum Holiday {
 	GoodFriday = 'Good Friday',
 	NL_Kingsday = 'Kingsday (NL)',
 	NL_LiberationDay = 'Liberation Day (NL)',
-	NewYearsDay = 'New year\' Day',
+	NewYearsDay = 'New Year\'s Day',
 	WhitMonday = 'Whit Monday',
 	WhitSunday = 'Whit Sunday',
 }
