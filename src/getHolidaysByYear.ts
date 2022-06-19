@@ -7,7 +7,7 @@ const getHolidaysByYear = (year: number, options: { country: Country } = { count
 
 	if (year < 0) throw new RangeError('Invalid year has been passed')
 
-	const countryFunction = require(`./countries/${country}/getHolidaysByYear.ts`).default
+	const countryFunction = require(`./countries/${country}/getHolidaysByYear`).default
 
 	return countryFunction(year, options)
 }
