@@ -11,14 +11,14 @@ const getHolidays = (options: { year: number, country: Country }): Partial<{ [ke
 
 	return {
 		[Holiday.AscensionDay]: moment(easterSunday).add(39, 'day').toDate(),
-		[Holiday.BoxingDay]: new Date(`12-26-${year}`),
-		[Holiday.ChristmasDay]: new Date(`12-25-${year}`),
+		[Holiday.BoxingDay]: moment.utc(`${year}-12-26`).toDate(),
+		[Holiday.ChristmasDay]: moment.utc(`${year}-12-25`).toDate(),
 		[Holiday.EasterMonday]: moment(easterSunday).add(1, 'day').toDate(),
 		[Holiday.EasterSunday]: easterSunday,
 		[Holiday.GoodFriday]: moment(easterSunday).subtract(2, 'day').toDate(),
-		[Holiday.NL_Kingsday]: new Date(`04-27-${year}`),
-		[Holiday.NL_LiberationDay]: new Date(`05-05-${year}`),
-		[Holiday.NewYearsDay]: new Date(`01-01-${year}`),
+		[Holiday.NL_Kingsday]: moment.utc(`${year}-04-27`).toDate(),
+		[Holiday.NL_LiberationDay]: moment.utc(`${year}-05-05`).toDate(),
+		[Holiday.NewYearsDay]: moment.utc(`${year}-01-01`).toDate(),
 		[Holiday.WhitMonday]: moment(whitSunday).add(1, 'day').toDate(),
 		[Holiday.WhitSunday]: whitSunday,
 	}

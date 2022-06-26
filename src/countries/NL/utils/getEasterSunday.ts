@@ -26,7 +26,7 @@ const intermediateDates: {[key: number]: string} = {
 const getEasterSunday = (year: number): Date => {
 	const index = (year - Math.floor(year / 19) * 19) + 1
 	const date = intermediateDates[index]
-	const intermediateDate = moment(`${date}-${year}`, 'MM-DD-YYYY')
+	const intermediateDate = moment.utc(`${year}-${date}`)
 
 	const targetWeekday = 7 // Sunday
 	const currentWeekday = intermediateDate.isoWeekday()
