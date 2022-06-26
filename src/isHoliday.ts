@@ -9,8 +9,8 @@ const isHoliday = (options: { date: NDate, country: Country }): boolean => {
 	const currentDate = moment.utc({ ...date, month: --date.month})
 	const holidays = noliday.getHolidays({ year: date.year, ...options })
 
-	for (const holiday of Object.values(holidays)) {
-		if (currentDate.isSame(holiday, 'day')) return true
+	for (const holiday of holidays) {
+		if (currentDate.isSame(holiday.date, 'day')) return true
 	}
 
 	return false

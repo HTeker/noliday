@@ -1,7 +1,7 @@
 import Country from "./enums/country.enum"
 import Holiday from "./enums/holiday.enum"
 
-const getHolidays = (options: { year: number, country: Country }): Partial<{ [key in Holiday]: Date }> => {
+const getHolidays = (options: { year: number, country: Country }): { holiday: Holiday, date: Date }[] => {
 
 	const { year, country } = options 
 
