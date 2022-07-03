@@ -62,10 +62,9 @@ describe('NL - getEasterSunday()', () => {
 		expect(result).toMatchObject(expected)
 	})
 
-	// TODO: find formula that works for this test case
-	// it('should calculcate Easter Sunday for the year 2079', () => {
-	// 	const result = getEasterSunday(2079)
-	// 	const expected = new Date('2079-04-23T00:00:00')
-	// 	expect(result).toMatchObject(expected)
-	// })
+	it('should calculcate Easter Sunday for the year 2079', () => {
+		const result = getEasterSunday(2079)
+		const expected = moment.utc('2079-04-23').toDate()
+		expect(result).toMatchObject(expected)
+	})
 })
