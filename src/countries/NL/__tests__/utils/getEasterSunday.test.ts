@@ -18,6 +18,12 @@ describe('NL - getEasterSunday()', () => {
 		const result = getEasterSunday(2019)
 		const expected = moment.utc('2019-04-21').toDate()
 		expect(result).toMatchObject(expected)
+    })
+    
+    it('should calculcate Easter Sunday for the year 2021', () => {
+		const result = getEasterSunday(2021)
+		const expected = moment.utc('2021-04-04').toDate()
+		expect(result).toMatchObject(expected)
 	})
 
 	it('should calculcate Easter Sunday for the year 2022', () => {

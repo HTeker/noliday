@@ -12,7 +12,7 @@ const intermediateDates: {[key: number]: string} = {
 	[8]: '03-28',
 	[9]: '04-16',
 	[10]: '04-05',
-	[11]: '05-25',
+	[11]: '03-25',
 	[12]: '04-13',
 	[13]: '04-02',
 	[14]: '03-22',
@@ -26,14 +26,14 @@ const intermediateDates: {[key: number]: string} = {
 const getEasterSunday = (year: number): Date => {
 	const index = (year - Math.floor(year / 19) * 19) + 1
 	const date = intermediateDates[index]
-	const intermediateDate = moment.utc(`${year}-${date}`)
-
+    const intermediateDate = moment.utc(`${year}-${date}`)
+    
 	const targetWeekday = 7 // Sunday
-	const currentWeekday = intermediateDate.isoWeekday()
-
-	if (currentWeekday <= targetWeekday) intermediateDate.isoWeekday(targetWeekday)
-
-	return intermediateDate.toDate()
+    const currentWeekday = intermediateDate.isoWeekday()
+    
+    if (currentWeekday === targetWeekday) return intermediateDate.add(1, 'week').toDate()
+    
+    return intermediateDate.isoWeekday(targetWeekday).toDate()
 }
 
 export default getEasterSunday
